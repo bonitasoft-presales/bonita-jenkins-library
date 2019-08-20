@@ -70,7 +70,7 @@ ${bcd_cmd}
  */
 def call(Map config) {
     try {
-        invoke_bcd(config.args,scenario.scenario)
+        invoke_bcd(config.args,config.scenario)
     }
     catch (err) {
         if (config.ignore_errors) {
