@@ -18,6 +18,7 @@ def ensure_stringvar(var, error_message) {
  * @param scenario Path to scenario file
  */
 def invoke_bcd(args,scenario) {
+
     // ensure args
     ensure_stringvar(args, "Arguments are empty! Did you forget to provide arguments to the 'bcd' step?")
 
@@ -37,6 +38,14 @@ medium_echo() {
 
 medium_echo "Bonita Continuous Delivery for Jenkins!"
 bcd version
+
+echo "env variables:"
+echo \${PATH}
+echo \${JAVA_HOME}
+
+
+java -version
+
 
 cd \${BCD_HOME}
 ${bcd_cmd}
