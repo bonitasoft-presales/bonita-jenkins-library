@@ -39,11 +39,11 @@ medium_echo() {
 medium_echo "Bonita Continuous Delivery for Jenkins!"
 bcd version
 
-echo "env variables:"
+medium_echo "env variables:"
+env
+echo "PATH"
 echo \${PATH}
 echo \${JAVA_HOME}
-
-
 java -version
 
 
