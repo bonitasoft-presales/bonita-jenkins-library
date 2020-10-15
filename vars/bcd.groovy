@@ -26,6 +26,8 @@ def invoke_bcd(args,scenario) {
     ensure_stringvar(scenario, "Mandatory argument 'scenario' is not set!")
     def bcd_cmd = "bcd -s ${scenario} -y ${args}"
     echo "[bcd-lib] ${bcd_cmd}"
+    echo "[java home] ${JAVA_HOME}"
+    echo "[path] ${PATH}"
 
     // execute bcd with bash
     sh """#!/bin/bash -l
@@ -36,15 +38,9 @@ medium_echo() {
     echo "\$1"
 }
 
+env
 medium_echo "Bonita Continuous Delivery for Jenkins!"
 bcd version
-
-medium_echo "env variables:"
-env
-echo "PATH"
-echo \${PATH}
-echo \${JAVA_HOME}
-java -version
 
 
 cd \${BCD_HOME}
